@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Hi Lashlie Mae Paliza</h1>
+  <div class="video" id="video">
+ <video autoplay loop muted playsinline>
+ <source src="Batman.mp4" type="video/mp4">
+ </video> 
+</div>
+  <!-- Continue button -->
+  <div class="question">
+    <button id="yesBtn" onclick="showConfession()">Continue</button>
+  </div>
+
+  <!-- Hidden confession message -->
+  <p id="confessionMessage" style="display: none;">
+   Can I take you out on a date this Saturday? 💐</p>
+  <p id="confessionMessage1" style="display: none;">
+    </p>
+
+  <!-- Yes / No buttons -->
+  <div class="buttons" id="responseButtons" style="display: none;">
+    <button id="acceptBtn" onclick="accept()">Yes</button>
+    <button id="rejectBtn" onmouseover="moveReject()" onclick="reject()">No</button>
+  </div>
+
+  <!-- Result area -->
+  <div class="result">
+    <p id="acceptResponse"></p>
+    <p id="acceptResponse1"></p>
+    <p id="rejectResponse"></p>
+    <img
+      id="funnyImage"
+      src="2.gif"
+      style="display: none; width: 300px;"
+      alt="Funny GIF"
+    >
+  </div>
+</div>
+
+<!-- Audio -->
+<audio id="acceptAudio" src="2.mp3"></audio>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
