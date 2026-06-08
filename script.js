@@ -1,4 +1,3 @@
-
 let rejectCount = 0;
 
 const rejectBtn = document.getElementById("rejectBtn");
@@ -14,7 +13,6 @@ const originalRejectPosition = {
   left: rejectBtn.style.left || "",
   top: rejectBtn.style.top || ""
 };
-
 
 // 🔊 Safe play function (prevents overlap)
 function playSound(audio) {
@@ -42,24 +40,26 @@ function accept() {
   playSound(acceptAudio);
 
   const acceptResponse = document.getElementById("acceptResponse");
-  acceptResponse.innerText = "You pressed yes?, I promise you’ll never regret giving me a chance.😊";
+  acceptResponse.innerText =
+    "You pressed yes?, I promise you’ll never regret giving me a chance.😊";
 
   const acceptResponse1 = document.getElementById("acceptResponse1");
-  acceptResponse1.innerHTML = '<a href="https://www.instagram.com/nrl_dlngn/" target="_blank" style="color: #ff6f61; text-decoration: none;">Click here to send me a response on IG</a>';
-  
+  acceptResponse1.innerHTML =
+    '<a href="https://www.instagram.com/nrl_dlngn/" target="_blank" style="color: #ff6f61; text-decoration: none;">Click here to send me a response on IG</a>';
 
   const gif = document.createElement("img");
   gif.src = "1.gif";
   gif.style.width = "150px";
+  gif.style.display = "block";
+  gif.style.margin = "10px auto 0 auto"; // centered
   acceptResponse.appendChild(gif);
- } 
- 
+}
 
 // ❌ NO clicked
 function reject() {
   resetResponses();
   rejectCount++;
-  
+
   // 🎥 HIDE VIDEO HERE
   document.getElementById("video").style.display = "none";
 
@@ -71,21 +71,24 @@ function reject() {
   moveReject();
 
   const rejectResponse = document.getElementById("rejectResponse");
-  rejectResponse.innerText = "You pressed no?, All good, thought I’d give it a shot."
+  rejectResponse.innerText =
+    "You pressed no?, All good, thought I’d give it a shot.";
 
   const rejectGif = document.createElement("img");
   rejectGif.src = "3.gif";
   rejectGif.style.width = "150px";
+  rejectGif.style.display = "block";
+  rejectGif.style.margin = "10px auto 0"; // centered
+
   rejectResponse.appendChild(rejectGif);
 
   if (rejectCount >= 2) {
     funnyImage.style.display = "block";
-    }
-    // ⬇️ RETURN BUTTON TO ORIGINAL POSITION
-    setTimeout(resetRejectPosition, 300); // small delay so movement is visible
-    }
-  
+  }
 
+  // ⬇️ RETURN BUTTON TO ORIGINAL POSITION
+  setTimeout(resetRejectPosition, 300);
+}
 
 // Move NO button randomly
 function moveReject() {
